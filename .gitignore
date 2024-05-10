@@ -1,0 +1,38 @@
+# .gitignore for Go projects
+
+# Compiled binary files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Build artifacts
+build/
+dist/
+vendor/
+bin/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore package manager files
+go.sum
+go.mod
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
