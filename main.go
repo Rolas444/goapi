@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/Rolas444/goapi.git/database"
+	"github.com/Rolas444/goapi.git/models"
 	"github.com/Rolas444/goapi.git/router"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
@@ -11,6 +12,7 @@ import (
 
 func main() {
 	database.ConnectDB()
+	database.DB.AutoMigrate(&models.Person{}, &models.Medication{}, &models.Prescription{}, &models.Dosage{})
 
 	app := fiber.New()
 

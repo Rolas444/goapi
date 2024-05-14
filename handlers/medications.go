@@ -40,7 +40,7 @@ func UpdateMedication(c *fiber.Ctx) error {
 	}
 	var oldMedication models.Medication
 	database.DB.Find(&oldMedication, id)
-	if oldMedication.Name == "" {
+	if oldMedication.ID == 0 {
 		return c.Status(404).SendString("No medication found with ID")
 	}
 	database.DB.Model(&oldMedication).Updates(medication)

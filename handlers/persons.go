@@ -29,6 +29,7 @@ func GetPerson(c *fiber.Ctx) error {
 }
 
 func UpdatePerson(c *fiber.Ctx) error {
+
 	id := c.Params("id")
 	person := new(models.Person)
 	if err := c.BodyParser(person); err != nil {
@@ -36,7 +37,7 @@ func UpdatePerson(c *fiber.Ctx) error {
 	}
 	var oldPerson models.Person
 	database.DB.Find(&oldPerson, id)
-	if oldPerson.Name == "" {
+	if oldPerson.ID == 0 {
 		return c.Status(404).SendString("No person found with ID")
 	}
 	database.DB.Model(&oldPerson).Updates(person)
