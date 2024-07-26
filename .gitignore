@@ -30,8 +30,8 @@ bin/
 *.sublime-workspace
 
 # Ignore package manager files
-go.sum
-go.mod
+# go.sum
+# go.mod
 
 # Ignore OS-specific files
 .DS_Store
